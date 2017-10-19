@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.85em;
+  text-align: left;
+}
+
+/* Create a position for the map on the page */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Set rules for how the map overlays (info box and legend) will be displayed on the page. */
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+  font-family: 'Roboto', sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+#features {
+/*      position: absolute;
+    bottom: 230px;
+    right: 20px;
+    padding: 10px;
+    line-height: 18px;
+    height: 100px;
+    width: 200px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: Helvetica, sans-serif;*/
+  position: absolute;
+  bottom: 200px;
+  height: 150px;
+  width: 200px;
+  padding: 10px;
+  line-height: 20px;
+  z-index: 2;
+  font-family: 'Roboto', sans-serif;
+}
+
+#legend {
+  /*    padding: 10px 0 10px 20px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255, 0.2);*/
+  padding: 10px 0 10px 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 30px;
+  text-align: justify;
+  height: 120px;
+  margin-bottom: 40px;
+  width: 200px;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 100%;  /* adds a border radius, a value of 100% changes a box to a circle */
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+/* Modals */
+#screen {
+	display: none;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: black;
+	opacity: 0.6;
+	z-index: 1;
+}
+
+.modal {
+	display: none;
+    width: 600px;
+    height: 400px;
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 150px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal .close-button {
+	color: #ccc;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 10px;
+	line-height: 30px;
+	font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal .close-button:hover { 
+	color: #bbb;
+}
+
+
+
+/* Pop-ups */
+
+.mapboxgl-popup-tip {
+	border-top-color: rgba(161, 218, 237, 0.75) !important;  /* the triangular shape at the bottom of the popup (tooltip) is formed by a thick border, where only the top border has a color, and the left, right, and bottom borders are transparent. Read more at https://css-tricks.com/snippets/css/css-triangle/ */
+}
+
+.mapboxgl-popup-content { 
+	background-color: rgba(161, 218, 237, 0.75);
+    box-shadow: 3px 3px 8px rgba(0, 56, 125, 0.4);    
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    color: #0a169c;
+}
+
+.mapboxgl-popup-close-button {
+    font-size: 30px;
+    color: blue;
+}
+
+/* About this Map Button */
+.button-default {
+    position: absolute;
+    margin: 20px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: larger;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    cursor: pointer;    
+}
+
+.button-default:hover {
+    background: darkblue;
+}
+
+.button-default:active {
+    background: black;
+}
+
+/*FAILED!!! Create a custom layer switcher to display different datasets*/
+/*#menu {
+        background: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 10px;
+        right: 10px;
+        border-radius: 3px;
+        width: 120px;
+        border: 1px solid rgba(0,0,0,0.4);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #menu a {
+        font-size: 13px;
+        color: #404040;
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0.25);
+        text-align: center;
+    }
+
+    #menu a:last-child {
+        border: none;
+    }
+
+    #menu a:hover {
+        background-color: #f8f8f8;
+        color: #404040;
+    }
+
+    #menu a.active {
+        background-color: #3887be;
+        color: #ffffff;
+    }
+
+    #menu a.active:hover {
+        background: #3074a4;
+    }*/
