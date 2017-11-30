@@ -1,0 +1,530 @@
+{
+  "nodes": [
+    {
+      "name": "0-1am",
+        "category": "times"
+    },
+    {
+      "name": "1-2am",
+        "category": "times"
+    },
+    {
+      "name": "2-3am",
+        "category": "times"
+    },
+    {
+      "name": "3-4am",
+        "category": "times"
+    },
+    {
+      "name": "4-5am",
+        "category": "times"
+    },
+    {
+      "name": "5-6am",
+        "category": "times"
+    },
+    {
+      "name": "6-7am",
+        "category": "times"
+    },
+    {
+      "name": "7-8am",
+        "category": "times"
+    },
+    {
+      "name": "8-9am",
+        "category": "times"
+    },
+    {
+      "name": "9-10am",
+        "category": "times"
+    },
+    {
+      "name": "10-11am",
+        "category": "times"
+    },
+    {
+      "name": "11-12am",
+        "category": "times"
+    },
+    {
+      "name": "Unknown",
+        "category": "gender"
+    },
+    {
+      "name": "Male",
+        "category": "gender"
+    },
+    {
+      "name": "Female",
+        "category": "gender"
+    },
+    {
+      "name": "GI Generation(-1924)",
+        "category": "age"
+    },
+    {
+      "name": "Silent Generation(1925-1942)",
+        "category": "age"
+    },
+    {
+      "name": "Baby Boomer(1943-1964)",
+        "category": "age"
+    },
+    {
+      "name": "Generation X(1965-1979)",
+        "category": "age"
+    },
+    {
+      "name": "Millennials(1980-2000)",
+        "category": "age"
+    },
+    {
+      "name": "Generation Z(2001-)",
+        "category": "age"
+    },
+    {
+      "name": "<10min",
+        "category": "duration"
+    },
+    {
+      "name": "10-30min",
+        "category": "duration"
+    },
+    {
+      "name": "30-60min",
+        "category": "duration"
+    },
+    {
+      "name": "60-180min",
+        "category": "duration"
+    },
+    {
+      "name": ">180min",
+        "category": "duration"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 12,
+      "value": 88
+    },
+    {
+      "source": 0,
+      "target": 13,
+      "value": 615
+    },
+    {
+      "source": 0,
+      "target": 14,
+      "value": 124
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "value": 22
+    },
+    {
+      "source": 1,
+      "target": 13,
+      "value": 166
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "value": 19
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "value": 16
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "value": 352
+    },
+    {
+      "source": 2,
+      "target": 14,
+      "value": 90
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "value": 130
+    },
+    {
+      "source": 3,
+      "target": 13,
+      "value": 3041
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "value": 828
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "value": 399
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "value": 6115
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "value": 2272
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "value": 903
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "value": 3380
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "value": 1262
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "value": 1309
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "value": 4560
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "value": 1659
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "value": 539
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "value": 4697
+    },
+    {
+      "source": 7,
+      "target": 14,
+      "value": 1702
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "value": 366
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "value": 5344
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "value": 1789
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "value": 818
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "value": 4537
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "value": 1748
+    },
+    {
+      "source": 10,
+      "target": 12,
+      "value": 370
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "value": 2201
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "value": 777
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "value": 241
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "value": 1337
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "value": 408
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "value": 2
+    },
+    {
+      "source": 12,
+      "target": 17,
+      "value": 16
+    },
+    {
+      "source": 12,
+      "target": 18,
+      "value": 82
+    },
+    {
+      "source": 12,
+      "target": 19,
+      "value": 133
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "value": 0
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "value": 4
+    },
+    {
+      "source": 13,
+      "target": 16,
+      "value": 76
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "value": 5053
+    },
+    {
+      "source": 13,
+      "target": 18,
+      "value": 10596
+    },
+    {
+      "source": 13,
+      "target": 19,
+      "value": 20597
+    },
+    {
+      "source": 13,
+      "target": 20,
+      "value": 19
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "value": 4
+    },
+    {
+      "source": 14,
+      "target": 16,
+      "value": 24
+    },
+    {
+      "source": 14,
+      "target": 17,
+      "value": 1497
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "value": 3092
+    },
+    {
+      "source": 14,
+      "target": 19,
+      "value": 8057
+    },
+    {
+      "source": 14,
+      "target": 20,
+      "value": 4
+    },
+    {
+      "source": 15,
+      "target": 21,
+      "value": 0
+    },
+    {
+      "source": 15,
+      "target": 22,
+      "value": 0
+    },
+    {
+      "source": 15,
+      "target": 23,
+      "value": 0
+    },
+    {
+      "source": 15,
+      "target": 24,
+      "value": 0
+    },
+    {
+      "source": 15,
+      "target": 25,
+      "value": 9
+    },
+    {
+      "source": 16,
+      "target": 21,
+      "value": 0
+    },
+    {
+      "source": 16,
+      "target": 22,
+      "value": 0
+    },
+    {
+      "source": 16,
+      "target": 23,
+      "value": 0
+    },
+    {
+      "source": 16,
+      "target": 24,
+      "value": 0
+    },
+    {
+      "source": 16,
+      "target": 25,
+      "value": 102
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "value": 0
+    },
+    {
+      "source": 17,
+      "target": 22,
+      "value": 2501
+    },
+    {
+      "source": 17,
+      "target": 23,
+      "value": 3633
+    },
+    {
+      "source": 17,
+      "target": 24,
+      "value": 431
+    },
+    {
+      "source": 17,
+      "target": 25,
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 21,
+      "value": 0
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "value": 13770
+    },
+    {
+      "source": 18,
+      "target": 23,
+      "value": 0
+    },
+    {
+      "source": 18,
+      "target": 24,
+      "value": 0
+    },
+    {
+      "source": 18,
+      "target": 25,
+      "value": 0
+    },
+    {
+      "source": 19,
+      "target": 21,
+      "value": 21107
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "value": 7680
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "value": 0
+    },
+    {
+      "source": 19,
+      "target": 24,
+      "value": 0
+    },
+    {
+      "source": 19,
+      "target": 25,
+      "value": 0
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "value": 23
+    },
+    {
+      "source": 20,
+      "target": 22,
+      "value": 0
+    },
+    {
+      "source": 20,
+      "target": 23,
+      "value": 0
+    },
+    {
+      "source": 20,
+      "target": 24,
+      "value": 0
+    },
+    {
+      "source": 20,
+      "target": 25,
+      "value": 102
+    }
+  ]
+}

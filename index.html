@@ -1,5 +1,7 @@
 <html>
+    
 <head>
+    
 	<meta charset='utf-8' /> <!-- Test -->
 
 	<title>Citi Bikes As Commuting Vehicles</title>
@@ -12,34 +14,68 @@
 	<!-- Link to Mapbox GL JS library -->	
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'></script>
 
+	<!-- Link to Mapbox GL JS library for heatmap -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.js'></script>
+
 	<!-- Link to Mapbox GL JS css stylesheet -->	
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css' rel='stylesheet' />
+
+	<!-- Link to Mapbox GL JS css stylesheet for heatmap -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.2/mapbox-gl.css' rel='stylesheet' />
 
 	<!-- Link to our custom stylesheet -->	
 	<link rel="stylesheet" href="map.css">
 
 	<!-- Link to Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+    
+    <!--link to d3 library for infographic-->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.6"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 </head>
 
 <body>
 
 	<!-- Test -->
 	<nav id="menu"></nav>
+    
+    <!-- Rounded switch -->
+    <div id="toggles">
+        <label id="startpoint" class="switch">
+            <input type="checkbox" checked="true">
+            <span class="slider round"></span>
+            <span class="label">show/hide start points</span>
+        </label>
 
- 
-	<!-- Map  -->	
+        <label id="endpoint" class="switch">
+            <input type="checkbox" checked="true">
+            <span class="slider round"></span>
+            <span class="label">show/hide end points</span>
+        </label>
+    </div>
+    
+    
+    <!-- Map  -->	
 	<div id="map"></div>
 
 	<!-- Info window (shows info about parks when hovering over a park)  -->	
 	<div class='map-overlay' id='features'>
 		<div id='info-window-body'>
-			<p>Hover over a bike lane or click on a bike station to learn more about it.</p>
+			<p>Hover over a bike lane to learn more about it. <br> Clicking on a bike station to get information is under developing.</p>
 		</div>
 	</div>
 
 	<!-- Map legend (content populated by our javascript) -->	
 	<div class='map-overlay' id='legend'></div>	
+    
+    <!-- Infographic -->
+    <div id="infographic">
+        <svg width="1500" height="800"></svg>
+        <button class='close-button'>&times;</button>  	 <!-- A special "x" character (the multiply sign) used in close buttons -->	
+	</div>
+	<div id='screen'>
+    </div>
 	
 	<!-- "About this map" modal (hidden by default) -->	
 	<div class='modal'>
@@ -55,4 +91,6 @@
 
 <!-- Link to our custom javascript -->	
 <script src="map.js"></script>
- </html>
+<script src="infographic.js"></script>
+    
+</html>

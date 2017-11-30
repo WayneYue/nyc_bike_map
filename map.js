@@ -17,12 +17,126 @@ var map = new mapboxgl.Map({
 	style: 'mapbox://styles/13777726133/cj8n4fi6e7ev32soro0kewsky' 
 });
 
+// Creat Heatmap
+map.on('load', function() {
+    //Add a geojson point source.
+    //Heatmap layers also work with a vector tile source.
+    map.addSource('earthquakes', {
+        "type": "geojson",
+        "data": "assets/Startpoints.geojson"
+    });
+
+    map.addLayer({
+        "id": "earthquakes-heat",
+        "type": "heatmap",
+        "source": "earthquakes",
+        "maxzoom": 15,
+        "paint": {
+            //Increase the heatmap weight based on frequency and property magnitude
+            //A measure of how much an individual point contributes to the heatmap. 
+            //A value of 10 would be equivalent to having 10 points of weight 1 in the same spot. 
+            //Especially useful when combined with clustering.
+            "heatmap-weight": {
+                "property": "mag",
+                "type": "exponential",
+                "stops": [
+                    [0, 0],
+                    [18, 0.1]
+                ]
+            },
+            //Increase the heatmap color weight weight by zoom level
+            //heatmap-ntensity is a multiplier on top of heatmap-weight
+            //Similar to heatmap-weight but controls the intensity of the heatmap globally. 
+            //Primarily used for adjusting the heatmap based on zoom level.
+            "heatmap-intensity": {
+                "stops": [
+                    [0, 0.2],
+                    [18, 0.4]
+                ]
+            },
+            //Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+            //Begin color ramp at 0-stop with a 0-transparancy color
+            //to create a blur-like effect.
+            "heatmap-color": [
+                "interpolate",
+                ["linear"],
+                ["heatmap-density"],
+                0, "rgba(33,102,172,0)",
+                0.1, "rgb(103,169,207)",
+                0.4, "rgb(209,229,240)",
+                0.8, "rgb(253,219,199)",
+                0.99, "rgb(239,138,98)",
+                1, "rgb(178,24,43)"
+            ],
+            //Adjust the heatmap radius by zoom level
+            "heatmap-radius": {
+                "stops": [
+                    [0, 1],
+                    [8, 1.1],
+                    [15, 40]
+                ]
+            },
+            //Transition from heatmap to circle layer by zoom level
+            "heatmap-opacity": {
+                "default": 1,
+                "stops": [
+                    [10, 0.8],
+                    [18, 0.5]
+                ]
+            },
+        }
+    }, 'waterway-label');
+
+//add points on every bike station（only blk）
+//    map.addLayer({
+//        "id": "earthquakes-point",
+//        "type": "circle",
+//        "source": "earthquakes",
+//        "minzoom": 7,
+//        "paint": {
+//            //Size circle raidus by earthquake magnitude and zoom level
+//            "circle-radius": {
+//                "property": "mag",
+//                "type": "exponential",
+//                "stops": [
+//                    [{ zoom: 8, value: 1 }, 0.5],
+//                    [{ zoom: 8, value: 6 }, 3],
+//                    [{ zoom: 16, value: 1 }, 2],
+//                    [{ zoom: 16, value: 6 }, 20],
+//                ]
+//            },
+//            //Color circle by earthquake magnitude
+//            "circle-color": {
+//                "property": "mag",
+//                "type": "exponential",
+//                "stops": [
+//                    [1, "rgba(33,102,172,0)"],
+//                    [2, "rgb(103,169,207)"],
+//                    [3, "rgb(209,229,240)"],
+//                    [4, "rgb(253,219,199)"],
+//                    [5, "rgb(239,138,98)"],
+//                    [6, "rgb(178,24,43)"]
+//                ]
+//            },
+//            "circle-stroke-color": "white",
+//            "circle-stroke-width": 1,
+//            //Transition from heatmap to circle layer by zoom level
+//            "circle-opacity": {
+//                "stops": [
+//                    [7, 0],
+//                    [8, 1]
+//                ]
+//            }
+//        }
+//    }, 'waterway-label');
+});
+
 
 //Create a custom layer switcher to display different datasets
 map.on('load', function () {
     map.addSource('startpoint', {
         type: 'vector',
-        url: 'mapbox://13777726133.aruiio16'
+        url: 'mapbox://13777726133.8zr3hr0o'
     });
     map.addLayer({
         'id': 'startpoint',
@@ -32,10 +146,10 @@ map.on('load', function () {
             'visibility': 'visible'
         },
         'paint': {
-            'circle-radius': 5,
-            'circle-color': 'rgba(219,36,60,0.2)'
+            'circle-radius': 3,
+            'circle-color': 'rgba(219,36,60,0.05)'
         },
-        'source-layer': '20170901-Filtered-Morning-Rus-559sek'
+        'source-layer': '01-201709-Filtered-Weekday-Mo-c9ku5x'
     });
 
     map.addSource('endpoint', {
@@ -50,8 +164,8 @@ map.on('load', function () {
             'visibility': 'visible'
         },
         'paint': {
-            'circle-radius': 5,
-            'circle-color': 'rgba(143,227,135,0.11)'
+            'circle-radius': 3,
+            'circle-color': 'rgba(48,167,37,0.05)'
         },
         'source-layer': '20170901-Filtered-Morning-Rus-559sek'
     });
@@ -77,34 +191,40 @@ map.on('load', function () {
     // });
 });
 
-var toggleableLayerIds = [ 'startpoint', 'endpoint' ];
+var toggleableLayerIds = [ '#startpoint', '#endpoint' ];
 
 for (var i = 0; i < toggleableLayerIds.length; i++) {
     var id = toggleableLayerIds[i];
+    
+    
+    
+    $(document).ready(function() {
+        $('#toggles input:checkbox').off().on('change', function(e) {
+            
+            e.preventDefault();
+            e.stopPropagation();
 
-    var link = document.createElement('a');
-    link.href = '#';
-    link.className = 'active';
-    link.textContent = id;
+            var checkbox = $(e.target);
+            var toggle = $(e.target).parents('label').attr('id');
+            console.log(toggle);
+            
+            var visibility = map.getLayoutProperty(toggle, 'visibility');
 
-    link.onclick = function (e) {
-        var clickedLayer = this.textContent;
-        e.preventDefault();
-        e.stopPropagation();
+            if (visibility === 'visible') {
+                map.setLayoutProperty(toggle, 'visibility', 'none');
+            } else {
+                map.setLayoutProperty(toggle, 'visibility', 'visible');
+            }
 
-        var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+        
+        });
+        
+//        var clickedLayer = e.target.id;
 
-        if (visibility === 'visible') {
-            map.setLayoutProperty(clickedLayer, 'visibility', 'none');
-            this.className = '';
-        } else {
-            this.className = 'active';
-            map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
-        }
-    };
+//
+    });
 
-    var layers = document.getElementById('menu');
-    layers.appendChild(link);
+
 }
 
 
